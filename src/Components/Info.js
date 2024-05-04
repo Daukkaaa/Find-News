@@ -1,27 +1,15 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 
 
-const api = "https://newsapi.org/v2/everything?q=keyword&apiKey=b059c19575e4498fa90c7fbd6640b7d5";
+function Info(props) {
+    //const [title, setTitle] = useState('Latest News');
 
-function Info() {
-    const [news, setNews] = useState([])
-
-    useEffect(() => {
-        axios.get(api)
-        .then((res) => {
-            setNews(res.data.articles)
-        })
-        .catch((error) => {
-            console.log("Error fetching news:", error)
-        })
-    }, [])
 
   return (
     <div className="news-container"> 
       <h2>Latest News</h2>
       <ul className="news-list"> 
-        {news.map((article, index) => (
+        {props.news.map((article, index) => (
           <li key={index} className="news-item">
             <img src={article.urlToImage} alt={article.title} className="news-image" /> 
             <div className="news-info">
@@ -37,3 +25,4 @@ function Info() {
 }
 
 export default Info;
+
