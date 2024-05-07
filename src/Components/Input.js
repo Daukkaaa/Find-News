@@ -13,6 +13,7 @@ const Input = (props) => {
         try {
             const response = await axios.get(`https://newsapi.org/v2/everything?q=${input}&apiKey=b059c19575e4498fa90c7fbd6640b7d5`);
             props.setNews(response.data.articles)
+            setInput('')
         } catch (error) {
             console.log("Error fetching news:", error)
         }
@@ -33,5 +34,51 @@ const Input = (props) => {
 };
 
 export default Input;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
