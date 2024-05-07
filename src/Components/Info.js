@@ -4,6 +4,9 @@ const Info = (props) => {
 
   return (
     <div className="news-container">
+      <div className="request">
+        {props.request ? `At your request: ${props.request}` : "Latest News"}
+      </div>
       <ul className="news-list">
         {props.news.map((el) => (
           <li className="news-item">
